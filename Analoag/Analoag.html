@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Analoag.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <div style="--clr:#43484f; --h:70px" class="hand" id="hour"><i></i></div>
+            <div style="--clr:#293029; --h:85px" class="hand" id="min"><i></i></div>
+            <div style="--clr:#1f1616; --h:100px" class="hand" id="sec"><i></i></div>
+            <ul>
+                <li style="--i:1;"><b>1</b></li>
+                <li style="--i:2;"><b>2</b></li>
+                <li style="--i:3;"><b>3</b></li>
+                <li style="--i:4;"><b>4</b></li>
+                <li style="--i:5;"><b>5</b></li>
+                <li style="--i:6;"><b>6</b></li>
+                <li style="--i:7;"><b>7</b></li>
+                <li style="--i:8;"><b>8</b></li>
+                <li style="--i:9;"><b>9</b></li>
+                <li style="--i:10;"><b>10</b></li>
+                <li style="--i:11;"><b>11</b></li>
+                <li style="--i:12;"><b>12</b></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+       
+        function displayTime() {
+
+            let date = new Date();
+
+
+            let gethh = date.getHours();
+            let getmm = date.getMinutes();
+            let getss = date.getSeconds();
+
+            let hRotation = 30 * gethh + getmm / 2;
+            let mRotation = 6 * getmm;
+            let sRotation = 6 * getss;
+
+            hour.style.transform = `rotate(${hRotation}deg)`;
+            min.style.transform = `rotate(${mRotation}deg)`;
+            sec.style.transform = `rotate(${sRotation}deg)`;
+
+        }
+
+        setInterval(displayTime, 1000);
+    </script>
+
+</body>
+
+</html>
